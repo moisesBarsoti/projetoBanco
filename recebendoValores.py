@@ -11,22 +11,7 @@ class Cliente:
         self.sobrenomeDoCLiente = sobrenomeDoCLiente,
         self.dataDeAniversario = dataDeAniversario,
         self.email = email,
-        self.senha = senha,
-
-    def novaConta(
-            self,
-            nomeDoCLiente,
-            sobrenomeDoCLiente,
-            dataDeAniversario,
-            email,
-            senha
-            ):
-            self.nomeDoCLiente = nomeDoCLiente
-            self.nomeDoCLiente = nomeDoCLiente
-            self.sobrenomeDoCLiente = sobrenomeDoCLiente
-            self.dataDeAniversario = dataDeAniversario
-            self.email = email
-            self.senha = senha
+        self.senha = senha
     
     def entrarNaConta(
             self,
@@ -61,5 +46,12 @@ class Cliente:
     def __str__(self) -> str:
          return f'{self.nomeDoCLiente}{self.sobrenomeDoCLiente}{self.dataDeAniversario}{self.email}{self.senha}'
 
-pessoa = Cliente('Moises','Barsoti','2005-07-03','teste2@gmail.com',1234)
+
+nome = input(f'Digite o seu \033[33mnome:\033[m ')
+sobrenome = input(f'Digite o seu \033[33msobrenome:\033[m ')
+data = input(f'Digite sua \033[33mdata de aniversário\033[m dessa forma \033[33m(ano-mês-dia):\033[m ')
+email = input(f'Digite o seu \033[33memail:\033[m ')
+senha = int(input(f'Digite a sua \033[33msenha (digite até 6 números):\033[m '))
+
+pessoa = Cliente(nome, sobrenome, data, email, senha)
 print(pessoa)
