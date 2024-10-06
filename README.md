@@ -3,9 +3,9 @@
 
 <h2>Desafio:</h2>
 <p>
-  Criar um cadastro de pessoa física, usando Python e MySQL com suas respectivas tabelas.
-  No final do programa deve aparecer o bano de dados atualizado.
-  Este programa deve conter um CRUD.
+  Criar um cadastro de pessoa física, usando Python e MySQL com suas respectivas tabelas. <br>
+  No final do programa deve aparecer o bano de dados atualizado. <br>
+  Este programa deve conter um CRUD. <br>
 </p>
 
 <p align="center">
