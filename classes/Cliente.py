@@ -57,6 +57,7 @@ while data == '':
     data = input('Digite sua \033[33mdata de aniversário\033[m dessa forma \033[33m(ano-mês-dia):\033[m ')
 while not re.match(dataRegex, data):
     print(f'\033[31mVocê tem que colocar dessa forma:\033[m')
+    print(f'\033[31mColocando os traços " - "\033[m')
     print(f'\033[36m2000-01-01\033[m')
     data = input('Digite sua \033[33mdata de aniversário\033[m dessa forma \033[33m(ano-mês-dia):\033[m ')
 

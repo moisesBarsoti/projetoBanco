@@ -1,9 +1,10 @@
-from Cliente import pessoa
+from classes.Cliente import pessoa
 from barsotiBank import barsotiBank
-from funcoes import verSaldo
+from funcoes.barsotiBank import verSaldo
 
 import mysql.connector
 
+# Conexão com o banco de dados
 conexao = mysql.connector.connect(
     host='localhost',
     user='root',

@@ -1,5 +1,6 @@
-from Cliente import pessoa
-from funcoes import limparTerminal, opcaoBanco
+from classes.Cliente import pessoa
+from funcoes.barsotiBank import opcaoBanco
+from funcoes.limpaTerminal import limparTerminal
 
 def barsotiBank():
     
@@ -22,7 +23,7 @@ def barsotiBank():
     print(f'\033[36mSeu email é:\033[m {pessoa.getEmail()}')
     print(f'\033[36mSua senha é:\033[m {pessoa.getSenha()}')
     print('')
-    print(f'\033[36mSeu saldo é:\033[m \033[33mR$ {pessoa.getSaldo()}\033[m')
+    print(f'\033[33mSeu saldo é:\033[m \033[32mR$ {pessoa.getSaldo()}\033[m')
     print('')
 
     # Opções de banco 

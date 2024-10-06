@@ -1,22 +1,13 @@
-from Cliente import pessoa
+from classes.Cliente import pessoa
 
-# Limpar terminal
-import os
-import platform
-
-def limparTerminal():
-    if platform.system() == "Windows":
-        os.system('cls')
-    else:
-        os.system('clear')
-
-
-# Barsoti Bank
+# Variaveis globais
 saldo = pessoa.getSaldo()
 extrato = ""
 numeroSaques = 0
 limite = 500
 LIMITE_SAQUES = 3
+
+# Menu de escolha
 
 def opcaoBanco():
     menu = """
@@ -26,7 +17,7 @@ def opcaoBanco():
     [s] Sacar
     [v] Ver Saldo
     [e] Extrato
-    [x] Excluir Conta
+    [x] Excluir extrato
     [q] Sair
     => """
     
@@ -39,15 +30,14 @@ def opcaoBanco():
             saque()
         elif opcao == "e":
             mostrarExtrato()
-        elif opcao == "v":
-            print(f"Seu saldo é: R$ {verSaldo():.2f}")
         elif opcao == "x":
-            excluirConta()
-            break
+            excluirExtrato()
         elif opcao == "q":
             break
         else:
-            print("Operação inválida, por favor selecione novamente a operação desejada.")
+            print(f"\033[31mOperação inválida, por favor selecione novamente a operação desejada.\033[m")
+
+# Depositar
 
 def depositar():
     global saldo, extrato
@@ -56,9 +46,12 @@ def depositar():
     if valor > 0:
         saldo += valor
         extrato += f"Depósito: R$ {valor:.2f}\n"
-        print('Operação funcionou! Veja o extrato')
+        print(f"\033[32mOperação funcionou! Veja o extrato\033[m")
+        print(f"\033[33mSeu saldo é:\033[m \033[32mR$ {verSaldo():.2f}\033[m")
     else:
-        print("Operação falhou! O valor informado é inválido.")
+        print(f"\033[31mOperação falhou! O valor informado é inválido.\033[m")
+
+# Saque
 
 def saque():
     global saldo, extrato, numeroSaques
@@ -69,32 +62,41 @@ def saque():
     excedeuSaques = numeroSaques >= LIMITE_SAQUES
     
     if excedeuSaldo:
-        print("Operação falhou! Você não tem saldo suficiente.")
+        print(f"\033[31mOperação falhou! Você não tem saldo suficiente.\033[m")
     elif excedeuLimite:
-        print("Operação falhou! O valor do saque excede o limite.")
+        print(f"\033[31mOperação falhou! O valor do saque excede o limite.\033[m")
     elif excedeuSaques:
-        print("Operação falhou! Número máximo de saques excedido.")
+        print(f"\033[31mOperação falhou! Número máximo de saques excedido.\033[m")
     elif valor > 0:
         saldo -= valor
         extrato += f"Saque: R$ {valor:.2f}\n"
         numeroSaques += 1
+        print(f"\033[32mOperação funcionou! Veja o extrato\033[m")
+        print(f"\033[33mSeu saldo é:\033[m \033[32mR$ {verSaldo():.2f}\033[m")
     else:
-        print("Operação falhou! O valor informado é inválido.")
+        print(f"\033[31mOperação falhou! O valor informado é inválido.\033[m")
+
+
+# Ver saldo
         
 def verSaldo():
     print('')
     return saldo
 
+# Mostrar extrato
+
 def mostrarExtrato():
     global extrato, saldo
     print("\n================ EXTRATO ================")
-    print("Não foram realizadas movimentações." if not extrato else extrato)
-    print(f"\nSaldo: R$ {saldo:.2f}")
+    print(f"\033[33mNão foram realizadas movimentações.\033[m" if not extrato else extrato)
+    print(f"\nSaldo: \033[32mR$ {saldo:.2f}\033[m")
     print("==========================================")
 
-def excluirConta():
+# Excluir extrato
+
+def excluirExtrato():
     global saldo, extrato, numeroSaques
     saldo = 0
     extrato = ""
     numeroSaques = 0
-    print("Conta excluída com sucesso.")
+    print(f"\033[32mExtrato excluído com sucesso.\033[m")
