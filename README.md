@@ -2,7 +2,7 @@
 <p>Docente: Fabio Peral</p>
 <p>Unidade: São Miguel</p>
 
-<h2>Desafio:</h2>
+<h2>📝 Desafio:</h2>
 <p>
   Criar um cadastro de pessoa física, usando Python e MySQL com suas respectivas tabelas. <br>
   No final do programa deve aparecer o bano de dados atualizado. <br>
