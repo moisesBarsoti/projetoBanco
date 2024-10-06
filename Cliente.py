@@ -77,4 +77,4 @@ while not senha.isdigit() or len(senha) > 6:
 senhaINT = int(senha)
 
 # Usando valores
-pessoa = Cliente(nome, sobrenome, data, email, senha)
+pessoa = Cliente(nome, sobrenome, data, email, senhaINT)

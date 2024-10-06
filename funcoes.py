@@ -20,6 +20,8 @@ LIMITE_SAQUES = 3
 
 def opcaoBanco():
     menu = """
+    Escolha uma das opções abaixo:
+    
     [d] Depositar
     [s] Sacar
     [v] Ver Saldo
@@ -29,7 +31,7 @@ def opcaoBanco():
     => """
     
     while True:
-        opcao = input(menu)
+        opcao = input(menu).lower()
         
         if opcao == "d":
             depositar()
@@ -41,6 +43,7 @@ def opcaoBanco():
             print(f"Seu saldo é: R$ {verSaldo():.2f}")
         elif opcao == "x":
             excluirConta()
+            break
         elif opcao == "q":
             break
         else:
@@ -79,7 +82,8 @@ def saque():
         print("Operação falhou! O valor informado é inválido.")
         
 def verSaldo():
-    return saldo        
+    print('')
+    return saldo
 
 def mostrarExtrato():
     global extrato, saldo
