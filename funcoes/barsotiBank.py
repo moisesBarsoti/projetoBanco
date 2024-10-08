@@ -1,6 +1,6 @@
 from classes.Cliente import pessoa
 
-# Variaveis globais
+# Variáveis globais
 saldo = pessoa.getSaldo()
 extrato = ""
 numeroSaques = 0
@@ -8,14 +8,12 @@ limite = 500
 LIMITE_SAQUES = 3
 
 # Menu de escolha
-
 def opcaoBanco():
     menu = """
     Escolha uma das opções abaixo:
     
     [d] Depositar
     [s] Sacar
-    [v] Ver Saldo
     [e] Extrato
     [x] Excluir extrato
     [q] Sair

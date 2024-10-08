@@ -2,3 +2,9 @@ Para executar o código, execute o arquivo " main.py "
 
 Versão do Python: Python 3.12.5 
 Versão do MySQL: MySQL Workbench 8.0
+
+Caso não executar o mysql.connector, faça o download pelo terminal
+
+pip install mysql-connector-python
+ou
+pip install mysql-connector
