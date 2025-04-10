@@ -1,10 +1,10 @@
 <h1 align="center">📘 Atividade da Proz Educação</h1>
 
-<p align="center">
+
 Docente: Fabio Peral<br>
 Unidade: São Miguel<br>
 Projeto: Back-End
-</p>
+
 
 ---
 
